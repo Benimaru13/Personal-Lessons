@@ -1,0 +1,33 @@
+# Sorting Algorithms - The Bubble Sort
+
+"""
+I just read up the main idea and concept behind one of the simplest sorting
+algorithms out there; the Bubble Sort. It was easy enough to grasp and code 
+and I was able to get it running with no issues.
+Basic Idea:
+create two loops:
+-an outer loop to iterate through n times
+-an inner loop to iterate through the list of size len(original)-1 
+this is because of that's what the size would be when you pair up the neighbours
+
+The inner loop swaps when its neighbour is smaller than it, and it does so by
+assigning one value to a temporary value, overwriting that value, and then assinging the temporary
+value to the other."""
+
+test_arr = [2,3,1,1,5,4,5,7,8,1]
+
+def BubbleSort(arr):
+    len_arr = len(arr)
+    for n in range(len_arr):
+        temp = -1
+        for i in range(len_arr - 1):
+            if arr[i] > arr[i+1]:
+                temp = arr[i]
+                arr[i] = arr[i+1]
+                arr[i+1] = temp
+                
+    return arr
+
+print(BubbleSort(test_arr))
+                    
+                
