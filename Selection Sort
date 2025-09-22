@@ -1,0 +1,21 @@
+# Benneth Chibueze
+
+# Selection Sort
+# Goes through the list N times, and within each turn,
+# performs at most N checks whether it is the smallest number
+
+arr = [3, 5, 1, 4, 2]
+
+def SelectSort(arr):
+  N = len(arr)
+  for i in range(N-1):
+    mini = i
+    for j in range(i + 1,N):
+      if arr[j] < arr[mini]:
+        mini = j
+    arr[i], arr[mini] = arr[mini], arr[i] # crucial swap step
+  return arr
+  
+print(SelectSort(arr))
+        
+      
