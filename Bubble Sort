@@ -28,6 +28,17 @@ def BubbleSort(arr):
                 
     return arr
 
+# OR
+def BSort(arr):
+  N = len(arr)
+  for i in range(N):
+    temp = -1
+    for j in range(N-1):
+      if arr[j] > arr[j+1]:
+        temp, arr[j], arr[j+1] = arr[j], arr[j+1], arr[j]
+    
+  return arr
+      
 print(BubbleSort(test_arr))
                     
                 
