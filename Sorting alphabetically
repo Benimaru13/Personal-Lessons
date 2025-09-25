@@ -12,9 +12,11 @@ Alphabets = {
   't':20, 'u':21, 'v':22, 'w':23, 'x':24, 'y':25, 'z':26
 }
 
-UserInput = input("input a word").lower()
-WordArray = [Alphabets[letter] for letter in UserInput]
-print(WordArray)
+UserInput = input("input a sentence").lower().split(" ")
+WordList = []
+for word in UserInput:
+    WordArray = [Alphabets[letter] for letter in word]
+    WordList.append(WordArray)
 
 def InsertSort(arr):
   N = len(arr)
@@ -35,6 +37,11 @@ def num_to_word(arr):
     
   return word
 
-InsertSort(WordArray)
-print(WordArray)
-print(num_to_word(WordArray))
+output = ""
+for array in WordList:
+    InsertSort(array)
+    # print(array)
+    output += num_to_word(array)
+    output += " "
+    
+print(f"The Inverted sentence is: {output}")
