@@ -1,0 +1,30 @@
+# Insertion sort
+# Benneth Chibueze 
+"""
+Insertion sort works by using two loops, one inner and one outer.
+the outer loop loops through the entire length of the array, N, once
+but it starts from the second character on the list, leaving the first one ambigous
+The header of this first loop actually seperates the "sorted" from the "unsorted"
+"sorted" cos the list is only as sorted as till the position of the header
+the inner loop compares the current item, arr[i] to the one directly beside it, to the left
+if it is less than it, it is replaced by the left item but not before being stored in a temp variable
+then it goes down the list to keep doing the same thing until it finds a spot to fit in, 
+then it replaces the item at that spot
+"""
+arr = [3,1,5,4,2]
+
+def InsertSort(arr):
+  N = len(arr) # Length of array
+  for item in range(1, N):
+    temp = arr[item]
+    left = item - 1
+    while arr[left] > temp and left >= 0:
+      arr[left+1] = arr[left] # item at left replaces the item right beside it
+      left -= 1 # move down the list
+    arr[left+1] = temp # place the item being compared beside the lesser left
+  
+  return arr
+      
+    
+  
+print(InsertSort(arr))
