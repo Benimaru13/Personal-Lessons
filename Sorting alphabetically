@@ -1,0 +1,40 @@
+# Sorting Alphabetically
+# Benneth Chibueze 
+"""
+sort an input text by alphabetical order
+first of all map the letters to numbers on a dictionary
+then implement insertion sort to sort it
+"""
+
+Alphabets = {
+  "a":1, 'b':2, 'c':3, 'd':4, 'e':5, 'f':6, 'g':7, 'h':8, 'i':9, 'j':10,
+  'k':11, 'l':12, 'm':13, 'n':14, 'o':15, 'p':16, 'q':17, 'r':18, 's':19, 
+  't':20, 'u':21, 'v':22, 'w':23, 'x':24, 'y':25, 'z':26
+}
+
+UserInput = input("input a word").lower()
+WordArray = [Alphabets[letter] for letter in UserInput]
+print(WordArray)
+
+def InsertSort(arr):
+  N = len(arr)
+  for i in range(1,N):
+    current = arr[i]
+    left = i - 1
+    while arr[left] > current and left >= 0:
+      arr[left + 1] = arr[left]
+      left -= 1
+    arr[left+1] = current
+    
+def num_to_word(arr):
+  word = ""
+  for num in arr:
+    for key, value in Alphabets.items():
+      if num == value:
+        word += key
+    
+  return word
+
+InsertSort(WordArray)
+print(WordArray)
+print(num_to_word(WordArray))
