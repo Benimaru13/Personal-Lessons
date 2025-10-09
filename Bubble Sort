@@ -31,11 +31,16 @@ def BubbleSort(arr):
 # OR
 def BSort(arr):
   N = len(arr)
+  swapped = False
   for i in range(N):
     temp = -1
+    swapped = False
     for j in range(N-1):
       if arr[j] > arr[j+1]:
         temp, arr[j], arr[j+1] = arr[j], arr[j+1], arr[j]
+        swapped = True
+        if swapped == False:
+            break
     
   return arr
       
