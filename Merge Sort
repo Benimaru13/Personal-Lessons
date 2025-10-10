@@ -1,0 +1,38 @@
+# Merge sort
+
+def MergeSort(arr):
+  # base case - returns unit arrays
+  if len(arr) <= 1:
+    return arr
+    
+  mid = len(arr)//2
+  # splits the list into two halfs, left and right
+  left = arr[:mid]
+  right = arr[mid:]
+  
+  # recursively calls function on left and right half
+  left_half = MergeSort(left)
+  right_half = MergeSort(right)
+  # merges seperate halfs
+  merged_arr = merge(left_half, right_half)
+  
+  return merged_arr
+  
+def merge(left, right):
+  merged = []
+  # compares the first items of the sorted sub arrays
+  while len(left) > 0 and len(right) > 0:
+    if left[0] < right[0]:
+      merged.append(left[0]) # adds smaller number to new list
+      left.pop(0) # removes smaller number
+    else:
+      merged.append(right[0])
+      right.pop(0)
+      
+  # add in what's left
+  merged.extend(left) 
+  merged.extend(right)
+
+  return merged
+  
+print(MergeSort([5, 4, 1, 3, 6, 2]))
