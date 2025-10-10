@@ -1,0 +1,28 @@
+# Cocktail Shaker sort
+# Benneth Chibueze
+
+def CocktailShakerSort(arr):
+  N = len(arr)
+  
+  for i in range(N):
+    swapped = False
+    k = 0
+    for j in range(N - i - 1):
+      if arr[j] > arr[j+1]:
+        arr[j], arr[j+1] = arr[j+1], arr[j]
+        swapped = True
+      k += 1
+    # print(k, i)
+    # Backward pass
+    # this iterates from the last item to the first checked item and bubbles the smaller number to the end
+    for j in range(k-1, i-1, -1):
+      if arr[j] > arr[j+1]:
+        arr[j], arr[j+1] = arr[j+1], arr[j]
+        swapped = True
+    if swapped == False:
+      break
+    
+  return arr
+  
+print(CocktailShakerSort([5, 1, 6, 3, 4, 7, 9,12,1,3,2]))
+
