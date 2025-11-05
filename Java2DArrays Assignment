@@ -48,7 +48,7 @@ public class Java2DArrays {
     }
 
     // Vertical Flip method
-    static void vFlip(int[][] arr2D) {
+    public static void vFlip(int[][] arr2D) {
         // swap along the vertical axis
         int temp = arr2D[0][0];
         int temp2 = arr2D[1][0];
@@ -61,7 +61,7 @@ public class Java2DArrays {
     }
     
     // Horizontal Flip method
-    static void hFlip(int[][] arr2D) {
+    public static void hFlip(int[][] arr2D) {
         // swap along the horizontal axis
         int temp = arr2D[0][0];
         int temp2 = arr2D[0][1];
@@ -74,7 +74,7 @@ public class Java2DArrays {
     }
 
     // method that prints out the numbers
-    static void printGrid(int[][] arr2D) {
+    public static void printGrid(int[][] arr2D) {
         for (int [] row:arr2D) {
             // Nested for loop
             for (int num:row) {
