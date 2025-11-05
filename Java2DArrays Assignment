@@ -3,17 +3,22 @@
  */
 
 package com.mycompany.java2darrays;
+
 // Import important modules
 import java.util.Arrays;
 import java.util.Scanner;
+
 /**
- *
- * @author c.benneth
+ * This program modifies an existing grid based on user-inputted instructions. 
+* The possible modifications are a vertical and a horizontal swap
+* @author  Chibueze Benneth
+* @version Java25
+* @since   2025-11-01 
  */
 public class Java2DArrays {
 
     public static void main(String[] args) {
-        // This is The default array
+        // This is the default array
         int [][] grid = {{1,2}, 
                          {3,4}     
                                 }; 
@@ -62,6 +67,7 @@ public class Java2DArrays {
         arr2D[1][1] = temp2;        
         
     }
+
     // method that prints out the numbers
     static void printGrid(int[][] arr2D) {
         for (int [] row:arr2D) {
