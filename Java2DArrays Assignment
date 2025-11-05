@@ -9,12 +9,17 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * This program modifies an existing grid based on user-inputted instructions. 
+* 
+* Java Array Flipping Assignments
+* 
+* This program modifies an existing grid based on user-inputted instructions. 
 * The possible modifications are a vertical and a horizontal swap
 * @author  Chibueze Benneth
 * @version Java25
 * @since   2025-11-01 
  */
+
+
 public class Java2DArrays {
 
     public static void main(String[] args) {
