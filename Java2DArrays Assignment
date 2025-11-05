@@ -1,0 +1,77 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.java2darrays;
+// Import important modules
+import java.util.Arrays;
+import java.util.Scanner;
+/**
+ *
+ * @author c.benneth
+ */
+public class Java2DArrays {
+
+    public static void main(String[] args) {
+        // This is The default array
+        int [][] grid = {{1,2}, 
+                         {3,4}     
+                                }; 
+        // Take user input
+        Scanner input = new Scanner(System.in);
+        String word = input.nextLine();
+        String[] words = word.split("");
+        
+        // Check what operation is being called
+        for (String letter:words) {
+            if (letter.equals("V")) {
+                vFlip(grid);
+            }
+            if (letter.equals("H")) {
+                hFlip(grid);
+            }
+        }
+        input.close();
+        // Print results
+        printGrid(grid);
+
+    }
+
+    // Vertical Flip method
+    static void vFlip(int[][] arr2D) {
+        // swap along the vertical axis
+        int temp = arr2D[0][0];
+        int temp2 = arr2D[1][0];
+        arr2D[0][0] = arr2D[0][1];
+        arr2D[0][1] = temp;
+        
+        arr2D[1][0] = arr2D[1][1];
+        arr2D[1][1] = temp2;        
+        
+    }
+    
+    // Horizontal Flip method
+    static void hFlip(int[][] arr2D) {
+        // swap along the horizontal axis
+        int temp = arr2D[0][0];
+        int temp2 = arr2D[0][1];
+        arr2D[0][0] = arr2D[1][0];
+        arr2D[1][0] = temp;
+        
+        arr2D[0][1] = arr2D[1][1];
+        arr2D[1][1] = temp2;        
+        
+    }
+    // method that prints out the numbers
+    static void printGrid(int[][] arr2D) {
+        for (int [] row:arr2D) {
+            // Nested for loop
+            for (int num:row) {
+                System.out.print((num + " "));
+             
+            }
+            System.out.println(); // print new line after each array is printed
+        }
+    }
+    
+}
